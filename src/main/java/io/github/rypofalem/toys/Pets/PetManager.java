@@ -31,7 +31,7 @@ public class PetManager implements Listener{
             petTypes.add(new PetDataParticle("Flame Fairy", new ItemStack(Material.FLINT_AND_STEEL), "Better double check fire-spread in your claim...", Particle.FLAME));
             petTypes.add(new PetDataParticle("Slime Fairy", new ItemStack(Material.SLIME_BALL), "Is THAT what that smell is!?", Particle.TOTEM));
             petTypes.add(new PetDataParticle("Saliva Fairy", new ItemStack(Material.CAULDRON_ITEM), "Rypo is running out of ideas.", Particle.SPIT));
-            petTypes.add(new PetDataParticle("Heart Fairy", new ItemStack(Material.APPLE), "Love is in the air!", Particle.PORTAL));
+            petTypes.add(new PetDataParticle("Magic Fairy", new ItemStack(Material.CHORUS_FRUIT_POPPED), "Extraordinarily generic!", Particle.PORTAL));
         }
         return Collections.unmodifiableList(petTypes);
     }
