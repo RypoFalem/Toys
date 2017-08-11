@@ -1,0 +1,10 @@
+name: Toys
+description: A collection of just for fun items
+author: RypoFalem
+version: 0.1
+main: io.github.rypofalem.toys.ToysPlugin
+depend: [ Custom ]
+permissions:
+  toy.admin:
+    description: admin
+    default: OP
