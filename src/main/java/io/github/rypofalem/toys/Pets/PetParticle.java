@@ -49,6 +49,6 @@ public class PetParticle extends Pet{
             yaw = (yaw+1)  % 360;
         }
         loc.add(offset);
-        loc.getWorld().spawnParticle(data.getParticle(), loc, 1, 0,0,0,0);
+        loc.getWorld().spawnParticle(data.getParticle(), loc, 3, .02,.02,.02,0);
     }
 }
