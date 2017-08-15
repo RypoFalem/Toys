@@ -1,6 +1,7 @@
 package io.github.rypofalem.toys.Pets;
 
 import com.winthier.custom.inventory.CustomInventory;
+import com.winthier.custom.item.ItemDescription;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -20,7 +21,13 @@ public class Menu implements CustomInventory{
 
     private static ItemStack[] createIcons(Player player) {
         ItemStack[] icons = new ItemStack[size];
-        int count = 0;
+        ItemStack nopet = new ItemStack(Material.BARRIER);
+        ItemDescription description = new ItemDescription();
+        description.setDisplayName("Stow Pet");
+        description.setDescription("Put away all pets");
+        description.apply(nopet);
+        icons[0] = nopet;
+        int count = 1;
         for(PetData pet : PetManager.getPets()){
             if(count >= size) break;
             if(player.hasPermission(pet.getPerm())){

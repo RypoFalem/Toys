@@ -5,12 +5,13 @@ import lombok.Getter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-abstract class PetData {
+public abstract class PetData {
+    @Getter private String ID;
     @Getter private String name;
     @Getter private ItemStack icon;
     @Getter private String description;
 
-    PetData(String name, ItemStack icon, String description){
+    PetData(String ID, String name, ItemStack icon, String description){
         ItemDescription meta = new ItemDescription();
         meta.setDisplayName(name);
         meta.setDescription(description);
@@ -18,10 +19,11 @@ abstract class PetData {
         this.icon = icon;
         this.description = description;
         this.name = name;
+        this.ID = ID.toLowerCase();
     }
 
     String getPerm(){
-        return "toys.pets." + name.toLowerCase();
+        return "toys.pets." + ID;
     }
 
     public abstract Pet create(Player player);

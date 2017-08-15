@@ -10,7 +10,7 @@ public class PetDataParticle extends PetData {
     private Particle particle;
 
     public PetDataParticle(String name, ItemStack icon, String description, Particle particle) {
-        super(name, icon, description);
+        super(particle.name().toLowerCase(), name, icon, description);
         this.particle = particle;
     }
 

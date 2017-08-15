@@ -1,8 +1,8 @@
 package io.github.rypofalem.toys.Pets;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Particle;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -17,21 +17,22 @@ public class PetManager implements Listener{
     public static List<PetData> getPets(){
         if(petTypes == null){
             petTypes = new ArrayList<>();
-            petTypes.add(new PetData("Stow Pet", new ItemStack(Material.BARRIER), "Put away all pets.") {
-                @Override
-                public Pet create(Player player) {
-                    return null;
-                }
-            });
-
-            petTypes.add(new PetDataParticle("Crimson Fairy", new ItemStack(Material.REDSTONE), "A blood red fairy.", Particle.REDSTONE));
-            petTypes.add(new PetDataParticle("Dark Fairy", new ItemStack(Material.COAL), "Spoopy.", Particle.SPELL_MOB_AMBIENT));
-            petTypes.add(new PetDataParticle("Water Fairy", new ItemStack(Material.WATER_BUCKET), "Are bubbles water or air?", Particle.WATER_BUBBLE));
-            petTypes.add(new PetDataParticle("Bright Fairy", new ItemStack(Material.END_ROD), "A very smart fairy.", Particle.END_ROD));
-            petTypes.add(new PetDataParticle("Flame Fairy", new ItemStack(Material.FLINT_AND_STEEL), "Better double check fire-spread in your claim...", Particle.FLAME));
-            petTypes.add(new PetDataParticle("Slime Fairy", new ItemStack(Material.SLIME_BALL), "Is THAT what that smell is!?", Particle.TOTEM));
-            petTypes.add(new PetDataParticle("Saliva Fairy", new ItemStack(Material.CAULDRON_ITEM), "Rypo is running out of ideas.", Particle.SPIT));
-            petTypes.add(new PetDataParticle("Magic Fairy", new ItemStack(Material.CHORUS_FRUIT_POPPED), "Extraordinarily generic!", Particle.PORTAL));
+            petTypes.add(new PetDataParticle(ChatColor.DARK_RED.toString() + "Crimson Fairy",
+                    new ItemStack(Material.REDSTONE), "A blood red fairy.", Particle.REDSTONE));
+            petTypes.add(new PetDataParticle(ChatColor.DARK_GRAY.toString() + "Ghastly Fairy",
+                    new ItemStack(Material.COAL), "Spoopy.", Particle.SPELL_MOB_AMBIENT));
+            petTypes.add(new PetDataParticle(ChatColor.DARK_AQUA.toString() + "Water Fairy",
+                    new ItemStack(Material.WATER_BUCKET), "Are bubbles water or air?", Particle.WATER_BUBBLE));
+            petTypes.add(new PetDataParticle(ChatColor.WHITE.toString() + "Bright Fairy",
+                    new ItemStack(Material.END_ROD), "A very smart fairy.", Particle.END_ROD));
+            petTypes.add(new PetDataParticle(ChatColor.RED.toString() + "Flame Fairy",
+                    new ItemStack(Material.FLINT_AND_STEEL), "Better double check fire-spread in your claim...", Particle.FLAME));
+            petTypes.add(new PetDataParticle(ChatColor.GREEN.toString() + "Slime Fairy",
+                    new ItemStack(Material.SLIME_BALL), "Is THAT what that smell is!?", Particle.TOTEM));
+            petTypes.add(new PetDataParticle(ChatColor.GRAY.toString() + "Saliva Fairy",
+                    new ItemStack(Material.CAULDRON_ITEM), "The spittin' image of spat spit.", Particle.SPIT));
+            petTypes.add(new PetDataParticle(ChatColor.DARK_PURPLE.toString() + "Magic Fairy",
+                    new ItemStack(Material.CHORUS_FRUIT_POPPED), "Extraordinarily generic!", Particle.PORTAL));
         }
         return Collections.unmodifiableList(petTypes);
     }

@@ -3,7 +3,6 @@ package io.github.rypofalem.toys.Pets;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
@@ -50,6 +49,6 @@ public class PetParticle extends Pet{
             yaw = (yaw+1)  % 360;
         }
         loc.add(offset);
-        loc.getWorld().spawnParticle(data.getParticle(), loc, 3, .02, .02, .02, 0);
+        loc.getWorld().spawnParticle(data.getParticle(), loc, 1, 0,0,0,0);
     }
 }

@@ -1,6 +1,8 @@
 package io.github.rypofalem.toys;
 
 import com.winthier.custom.event.CustomRegisterEvent;
+import io.github.rypofalem.toys.Pets.PetCertificate;
+import io.github.rypofalem.toys.Pets.PetData;
 import io.github.rypofalem.toys.Pets.PetItem;
 import io.github.rypofalem.toys.Pets.PetManager;
 import org.bukkit.Bukkit;
@@ -20,6 +22,9 @@ public class ToysPlugin extends JavaPlugin implements Listener {
     public void onCustomRegister(CustomRegisterEvent event){
         Bukkit.getPluginManager().registerEvents(new PetManager(), this);
         event.addItem(new PetItem());
+        for(PetData pet : PetManager.getPets()){
+            event.addItem(new PetCertificate(pet));
+        }
         Bukkit.getScheduler().runTaskTimer(this, new BukkitRunnable() {
             private int tick = 0;
             @Override
